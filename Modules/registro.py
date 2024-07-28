@@ -18,6 +18,7 @@ ROLES_TRILHAS = {
 REGISTRATION_CHANNEL_ID = 1266353703825313812  # Substitua pelo ID do seu canal de registro
 NON_REGISTRATION_WARNINGS = {}
 
+
 async def registro(ctx):
     if ctx.channel.id != REGISTRATION_CHANNEL_ID:
         user_warnings = NON_REGISTRATION_WARNINGS.get(ctx.author.id, 0)
@@ -54,6 +55,7 @@ async def registro(ctx):
     await message_genero.delete()
     await message_trilhas.delete()
 
+
 async def on_reaction_add(reaction, user):
     if user == reaction.message.guild.me:
         return
@@ -84,6 +86,7 @@ async def on_reaction_add(reaction, user):
                             break
             await member.add_roles(new_role)
 
+
 async def on_reaction_remove(reaction, user):
     if user == reaction.message.guild.me:
         return
@@ -104,6 +107,7 @@ async def on_reaction_remove(reaction, user):
 
         if role and role in member.roles:
             await member.remove_roles(role)
+
 
 def setup(bot):
     bot.add_command(commands.Command(registro, name='registro'))
