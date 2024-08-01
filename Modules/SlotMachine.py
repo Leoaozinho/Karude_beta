@@ -47,3 +47,4 @@ class SlotMachine(commands.Cog):
 # Função setup para adicionar o cog
 async def setup(bot):
     await bot.add_cog(SlotMachine(bot))
+    
