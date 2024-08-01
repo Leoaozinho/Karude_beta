@@ -19,7 +19,7 @@ class Registro(commands.Cog):
             "🎨": "MKT e Design",
         }
 
-        self.REGISTRATION_CHANNEL_ID = 1267547111751159962  # Substitua pelo ID do seu canal de registro
+        self.REGISTRATION_CHANNEL_ID =   # Substitua pelo ID do seu canal de registro
         self.NON_REGISTRATION_WARNINGS = {}
 
     @commands.command(name='registro')
