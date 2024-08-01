@@ -35,4 +35,4 @@ async def on_ready():
     await load_extensions()
 
 
-bot.run('MTI2MzU4ODQwNzk1MTYyNjI4MA.GlcTW-.CUOSuJJoZgB30iGf9Nmi1_uC4kIoqhk8ZOFKkc')
+bot.run('TOKEN AQUI')
