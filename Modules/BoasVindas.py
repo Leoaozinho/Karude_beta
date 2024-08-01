@@ -2,10 +2,10 @@ import discord
 from discord.ext import commands
 from random import choice
 
-WELCOME_CHANNEL_ID = 1252747832088203299  # Substitua pelo ID do seu canal de boas-vindas
-CARGOS_CHANNEL_ID = 1267547111751159962
-REGRAS_CHANNEL_ID = 1259293489737502790
-GERAL_CHANNEL_ID = 1252755962947964928
+WELCOME_CHANNEL_ID =   # Substitua pelo ID do seu canal de boas-vindas
+CARGOS_CHANNEL_ID = 
+REGRAS_CHANNEL_ID = 
+GERAL_CHANNEL_ID = 
 
 class BoasVindas(commands.Cog):
     def __init__(self, bot):
