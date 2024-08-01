@@ -1,6 +1,6 @@
 import random
 from discord.ext import commands
-
+import discord
 
 class SlotMachine(commands.Cog):
     def __init__(self, bot):
@@ -29,22 +29,41 @@ class SlotMachine(commands.Cog):
         symbols = rewards.get(self.difficulty, rewards[1])
         result = [random.choice(symbols) for _ in range(3)]
 
-        # Mostra o resultado ao jogador
-        result_str = "".join(result)
-        await ctx.send(f"Resultado: {result_str}")
+        # Cria o embed
+        embed = discord.Embed(
+            title="🎰 Máquinas de Slot 🎰",
+            description="Tente a sorte e veja se você ganhou!",
+            color=discord.Color.gold()
+        )
+        embed.add_field(
+            name="Resultado",
+            value=f"{' | '.join(result)}",
+            inline=False
+        )
 
         # Verifica se houve algum prêmio
+        result_str = "".join(result)
         prize = prize_levels.get(result_str, 0)
         if prize > 0:
-            await ctx.send(f"Parabéns! Você ganhou {prize} pontos!")
+            embed.add_field(
+                name="🏆 Parabéns! 🏆",
+                value=f"Você ganhou {prize} pontos!",
+                inline=False
+            )
             self.difficulty += 1  # Aumenta a dificuldade
         else:
-            await ctx.send("Não foi dessa vez! Tente novamente.")
+            embed.add_field(
+                name="<:badge5:1259507927732191335> Não foi dessa vez! <:badge5:1259507927732191335>",
+                value="Tente novamente para ganhar prêmios!",
+                inline=False
+            )
             if self.difficulty > 1:
                 self.difficulty -= 1  # Diminui a dificuldade
 
+        # Envia o embed
+        await ctx.send(embed=embed)
 
 # Função setup para adicionar o cog
 async def setup(bot):
     await bot.add_cog(SlotMachine(bot))
-    
+    print("Comando slot registrado.")
