@@ -1,0 +1,230 @@
+[
+    {
+        "O que é CRM?": "O que é CRM?",
+        "Customer Relationship Management": "Customer Relationship Management"
+    },
+    {
+        "O que é prospecção de clientes?": "O que é prospecção de clientes?",
+        "A busca e identificação de potenciais clientes":
+        "A busca e identificação de potenciais clientes"
+    },
+    {
+        "O que é um lead?": "O que é um lead?",
+        "Um potencial cliente que demonstrou interesse em produtos ou serviços":
+        "Um potencial cliente que demonstrou interesse em produtos ou serviços"
+    },
+    {
+        "O que é a qualificação de leads?": "O que é a qualificação de leads?",
+        "O processo de avaliar se um lead tem potencial para se tornar um cliente":
+        "O processo de avaliar se um lead tem potencial para se tornar um cliente"
+    },
+    {
+        "O que é follow-up?": "O que é follow-up?",
+        "O acompanhamento de um prospecto após uma interação inicial":
+        "O acompanhamento de um prospecto após uma interação inicial"
+    },
+    {
+        "O que é funil de vendas?": "O que é funil de vendas?",
+        "Um modelo que descreve as etapas que um cliente passa desde o conhecimento até a compra":
+        "Um modelo que descreve as etapas que um cliente passa desde o conhecimento até a compra"
+    },
+    {
+        "O que é uma proposta de valor?": "O que é uma proposta de valor?",
+        "Uma declaração de benefícios que uma empresa oferece aos clientes":
+        "Uma declaração de benefícios que uma empresa oferece aos clientes"
+    },
+    {
+        "O que é a técnica de vendas SPIN?": "O que é a técnica de vendas SPIN?",
+        "Uma técnica que usa perguntas para identificar Situações, Problemas, Implicações e Necessidades de soluções":
+        "Uma técnica que usa perguntas para identificar Situações, Problemas, Implicações e Necessidades de soluções"
+    },
+    {
+        "O que é uma objeção de venda?": "O que é uma objeção de venda?",
+        "Uma razão ou preocupação levantada por um cliente para não fazer a compra":
+        "Uma razão ou preocupação levantada por um cliente para não fazer a compra"
+    },
+    {
+        "O que é uma pipeline de vendas?": "O que é uma pipeline de vendas?",
+        "Uma visualização das etapas que um lead passa até se tornar um cliente":
+        "Uma visualização das etapas que um lead passa até se tornar um cliente"
+    },
+    {
+        "O que é venda consultiva?": "O que é venda consultiva?",
+        "Uma abordagem de vendas que se concentra em entender as necessidades do cliente e oferecer soluções personalizadas":
+        "Uma abordagem de vendas que se concentra em entender as necessidades do cliente e oferecer soluções personalizadas"
+    },
+    {
+        "O que é upselling?": "O que é upselling?",
+        "A técnica de oferecer ao cliente uma versão mais cara do produto ou serviço que ele está comprando":
+        "A técnica de oferecer ao cliente uma versão mais cara do produto ou serviço que ele está comprando"
+    },
+    {
+        "O que é cross-selling?": "O que é cross-selling?",
+        "A técnica de vender produtos ou serviços adicionais ao cliente":
+        "A técnica de vender produtos ou serviços adicionais ao cliente"
+    },
+    {
+        "O que é churn rate?": "O que é churn rate?",
+        "A taxa de clientes que deixam de usar o produto ou serviço de uma empresa":
+        "A taxa de clientes que deixam de usar o produto ou serviço de uma empresa"
+    },
+    {
+        "O que é ticket médio?": "O que é ticket médio?",
+        "O valor médio gasto por cliente em uma compra":
+        "O valor médio gasto por cliente em uma compra"
+    },
+    {
+        "O que é ROI (Retorno sobre Investimento)?": "O que é ROI (Retorno sobre Investimento)?",
+        "Uma medida de rentabilidade que calcula o retorno gerado sobre o investimento":
+        "Uma medida de rentabilidade que calcula o retorno gerado sobre o investimento"
+    },
+    {
+        "O que é B2B (Business to Business)?": "O que é B2B (Business to Business)?",
+        "Transações comerciais entre empresas": "Transações comerciais entre empresas"
+    },
+    {
+        "O que é B2C (Business to Consumer)?": "O que é B2C (Business to Consumer)?",
+        "Transações comerciais entre empresas e consumidores finais":
+        "Transações comerciais entre empresas e consumidores finais"
+    },
+    {
+        "O que é uma call to action?": "O que é uma call to action?",
+        "Uma instrução para o público realizar uma ação específica, como fazer uma compra":
+        "Uma instrução para o público realizar uma ação específica, como fazer uma compra"
+    },
+    {
+        "O que é cold call?": "O que é cold call?",
+        "Uma chamada telefônica não solicitada a um potencial cliente":
+        "Uma chamada telefônica não solicitada a um potencial cliente"
+    },
+    {
+        "O que é uma demonstração de produto?": "O que é uma demonstração de produto?",
+        "Uma apresentação prática de como um produto ou serviço funciona":
+        "Uma apresentação prática de como um produto ou serviço funciona"
+    },
+    {
+        "O que é um pitch de vendas?": "O que é um pitch de vendas?",
+        "Uma apresentação breve e persuasiva sobre um produto ou serviço":
+        "Uma apresentação breve e persuasiva sobre um produto ou serviço"
+    },
+    {
+        "O que é uma proposta comercial?": "O que é uma proposta comercial?",
+        "Um documento formal que apresenta uma oferta de venda para um potencial cliente":
+        "Um documento formal que apresenta uma oferta de venda para um potencial cliente"
+    },
+    {
+        "O que é a técnica de fechamento?": "O que é a técnica de fechamento?",
+        "Métodos e estratégias usados para convencer o cliente a finalizar a compra":
+        "Métodos e estratégias usados para convencer o cliente a finalizar a compra"
+    },
+    {
+        "O que é a abordagem AIDA (Atenção, Interesse, Desejo, Ação)?": "O que é a abordagem AIDA (Atenção, Interesse, Desejo, Ação)?",
+        "Um modelo de comunicação de marketing que descreve as etapas que uma mensagem deve seguir para levar o consumidor à ação":
+        "Um modelo de comunicação de marketing que descreve as etapas que uma mensagem deve seguir para levar o consumidor à ação"
+    },
+    {
+        "O que é segmentação de mercado?": "O que é segmentação de mercado?",
+        "A divisão de um mercado em grupos de consumidores com características ou necessidades semelhantes":
+        "A divisão de um mercado em grupos de consumidores com características ou necessidades semelhantes"
+    },
+    {
+        "O que é uma buyer persona?": "O que é uma buyer persona?",
+        "Uma representação semi-fictícia do cliente ideal baseada em dados reais":
+        "Uma representação semi-fictícia do cliente ideal baseada em dados reais"
+    },
+    {
+        "O que é NPS (Net Promoter Score)?": "O que é NPS (Net Promoter Score)?",
+        "Uma métrica que avalia a lealdade dos clientes com base na probabilidade de recomendarem a empresa":
+        "Uma métrica que avalia a lealdade dos clientes com base na probabilidade de recomendarem a empresa"
+    },
+    {
+        "O que é uma taxa de conversão?": "O que é uma taxa de conversão?",
+        "A porcentagem de visitantes de um site ou campanha que realizam uma ação desejada":
+        "A porcentagem de visitantes de um site ou campanha que realizam uma ação desejada"
+    },
+    {
+        "O que é um ciclo de vendas?": "O que é um ciclo de vendas?",
+        "O período desde o primeiro contato com o cliente até a conclusão da venda":
+        "O período desde o primeiro contato com o cliente até a conclusão da venda"
+    },
+    {
+        "O que é a gestão de relacionamento com o cliente?": "O que é a gestão de relacionamento com o cliente?",
+        "Estratégias e práticas usadas para gerenciar e analisar as interações com clientes":
+        "Estratégias e práticas usadas para gerenciar e analisar as interações com clientes"
+    },
+    {
+        "O que é a técnica de ancoragem?": "O que é a técnica de ancoragem?",
+        "Uma técnica de negociação onde um preço inicial é estabelecido para influenciar a percepção de valor do cliente":
+        "Uma técnica de negociação onde um preço inicial é estabelecido para influenciar a percepção de valor do cliente"
+    },
+    {
+        "O que é uma estratégia de precificação?": "O que é uma estratégia de precificação?",
+        "Um plano para determinar o preço de um produto ou serviço":
+        "Um plano para determinar o preço de um produto ou serviço"
+    },
+    {
+        "O que é uma análise SWOT em vendas?": "O que é uma análise SWOT em vendas?",
+        "Uma análise que avalia os pontos fortes, fracos, oportunidades e ameaças em vendas":
+        "Uma análise que avalia os pontos fortes, fracos, oportunidades e ameaças em vendas"
+    },
+    {
+        "O que é uma venda de ciclo curto?": "O que é uma venda de ciclo curto?",
+        "Uma venda que é concluída rapidamente, com poucas interações":
+        "Uma venda que é concluída rapidamente, com poucas interações"
+    },
+    {
+        "O que é uma venda de ciclo longo?": "O que é uma venda de ciclo longo?",
+        "Uma venda que leva muito tempo para ser concluída e envolve várias interações":
+        "Uma venda que leva muito tempo para ser concluída e envolve várias interações"
+    },
+    {
+        "O que é uma análise de concorrência?": "O que é uma análise de concorrência?",
+        "A avaliação dos pontos fortes e fracos dos concorrentes em um mercado":
+        "A avaliação dos pontos fortes e fracos dos concorrentes em um mercado"
+    },
+    {
+        "O que é uma comissão de vendas?": "O que é uma comissão de vendas?",
+        "Uma remuneração adicional paga aos vendedores com base nas vendas que eles geram":
+        "Uma remuneração adicional paga aos vendedores com base nas vendas que eles geram"
+    },
+    {
+        "O que é um quota de vendas?": "O que é um quota de vendas?",
+        "Uma meta de vendas estabelecida para um vendedor ou equipe de vendas":
+        "Uma meta de vendas estabelecida para um vendedor ou equipe de vendas"
+    },
+    {
+        "O que é uma taxa de sucesso?": "O que é uma taxa de sucesso?",
+        "A proporção de vendas realizadas em relação às oportunidades de venda":
+        "A proporção de vendas realizadas em relação às oportunidades de venda"
+    },
+    {
+        "O que é a técnica de fechamento alternativo?": "O que é a técnica de fechamento alternativo?",
+        "Uma técnica onde o vendedor apresenta ao cliente duas opções, ambas levando à compra":
+        "Uma técnica onde o vendedor apresenta ao cliente duas opções, ambas levando à compra"
+    },
+    {
+        "O que é o método de vendas Challenger?": "O que é o método de vendas Challenger?",
+        "Um modelo de vendas que desafia os clientes a pensar de maneira diferente sobre suas necessidades":
+        "Um modelo de vendas que desafia os clientes a pensar de maneira diferente sobre suas necessidades"
+    },
+    {
+        "O que é a técnica de vendas Sandler?": "O que é a técnica de vendas Sandler?",
+        "Uma metodologia de vendas que se concentra em construir uma relação de confiança com o cliente":
+        "Uma metodologia de vendas que se concentra em construir uma relação de confiança com o cliente"
+    },
+    {
+        "O que é o método de vendas Miller Heiman?": "O que é o método de vendas Miller Heiman?",
+        "Uma abordagem de vendas que se concentra em entender e atender às necessidades complexas de grandes contas":
+        "Uma abordagem de vendas que se concentra em entender e atender às necessidades complexas de grandes contas"
+    },
+    {
+        "O que é uma reunião de kickoff de vendas?": "O que é uma reunião de kickoff de vendas?",
+        "Uma reunião inicial para alinhar a equipe de vendas com os objetivos e estratégias de uma campanha":
+        "Uma reunião inicial para alinhar a equipe de vendas com os objetivos e estratégias de uma campanha"
+    },
+    {
+        "O que é uma análise de pipeline?": "O que é uma análise de pipeline?",
+        "A avaliação do progresso dos leads através das etapas do funil de vendas":
+        "A avaliação do progresso dos leads através das etapas do funil de vendas"
+    }
+]

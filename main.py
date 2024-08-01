@@ -1,46 +1,36 @@
-import os
 import discord
 from discord.ext import commands
-from discord.ext.commands import bot
-from dotenv import load_dotenv
-from Modules import registro
-from Modules import boas_vindas
-from Modules import jogo_quiz
+import asyncio
 
-# Carregar variáveis de ambiente
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-
-# Configurar intents
 intents = discord.Intents.default()
 intents.message_content = True
+intents.reactions = True
+intents.guilds = True
 intents.members = True
 
-# Inicializar o bot
-client = commands.Bot(command_prefix="!", intents=intents)
-
-# Carregar a extensão de respostas automáticas
-try:
-    bot.load_extension('modules.responses')  # Certifique-se de que o caminho está correto
-except Exception as e:
-    print(f'Erro ao carregar a extensão modules.responses: {e}')
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 
-@client.event
+async def load_extensions():
+    initial_extensions = [
+        'Modules.registro_cog',
+        'Modules.BoasVindas',
+        'Modules.JogoQuiz',
+        'Modules.SlotMachine'
+    ]
+
+    for extension in initial_extensions:
+        try:
+            await bot.load_extension(extension)
+            print(f"Loaded {extension}")
+        except Exception as e:
+            print(f"Failed to load extension {extension}: {e}")
+
+
+@bot.event
 async def on_ready():
-    print(f'{client.user} está online!')
+    print(f'Logged in as {bot.user.name}')
+    await load_extensions()
 
 
-# Registrar funcionalidades dos módulos
-registro.setup(client)
-boas_vindas.setup(client)
-jogo_quiz.setup(client)
-bot.load_extension('slot_machine')
-
-
-def main():
-    client.run(TOKEN)
-
-
-if __name__ == '__main__':
-    main()
+bot.run('MTI2NjM0Nzk3NjkyNjgyNjU3OQ.GBLn7I.LBQgRqOr10952lndwEjhvcM2XY1upItcOm1nak')

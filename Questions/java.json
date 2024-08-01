@@ -1,0 +1,245 @@
+[
+    {
+        "Qual é a saída de System.out.println(2 + 3 * 4);?": "Qual é a saída de System.out.println(2 + 3 * 4);?",
+        "14": "14"
+    },
+    {
+       "Como você declara uma variável em Java?": "Como você declara uma variável em Java?",
+        "Usando o tipo e o nome da variável, por exemplo: int x;":
+        "Usando o tipo e o nome da variável, por exemplo: int x;"
+    },
+    {
+       "O que é uma classe em Java?": "O que é uma classe em Java?",
+        "Uma estrutura de código que define as propriedades e comportamentos de um objeto":
+        "Uma estrutura de código que define as propriedades e comportamentos de um objeto"
+    },
+    {
+        "Como você cria um objeto em Java?": "Como você cria um objeto em Java?",
+        "Usando a palavra-chave new, por exemplo: new MyClass();":
+        "Usando a palavra-chave new, por exemplo: new MyClass();"
+    },
+    {
+        "Qual é a diferença entre == e equals() em Java?": "Qual é a diferença entre == e equals() em Java?",
+       "== compara referências, equals() compara valores":
+       "== compara referências, equals() compara valores"
+    },
+    {
+        "O que é uma interface em Java?": "O que é uma interface em Java?",
+        "Um contrato que uma classe pode implementar": "Um contrato que uma classe pode implementar"
+    },
+    {
+        "Como você define uma constante em Java?": "Como você define uma constante em Java?",
+        "Usando a palavra-chave final": "Usando a palavra-chave final"
+    },
+    {
+        "O que é um construtor em Java?": "O que é um construtor em Java?",
+        "Um método especial usado para inicializar objetos":
+        "Um método especial usado para inicializar objetos"
+    },
+    {
+        "Qual é a saída de System.out.println(\"Hello\" + \"World\");?":
+        "Qual é a saída de System.out.println(\"Hello\" + \"World\");?",
+        "HelloWorld": "HelloWorld"
+    },
+    {
+        "Como você define um método em Java?": "Como você define um método em Java?",
+        "Com um modificador de acesso, tipo de retorno, nome e parâmetros, por exemplo: public void myMethod()":
+        "Com um modificador de acesso, tipo de retorno, nome e parâmetros, por exemplo: public void myMethod()"
+    },
+    {
+        "O que é um método estático?": "O que é um método estático?",
+        "Um método que pertence à classe, e não a uma instância":
+        "Um método que pertence à classe, e não a uma instância"
+    },
+    {
+        "Qual é a palavra-chave para herança em Java?": "Qual é a palavra-chave para herança em Java?",
+        "extends": "extends"
+    },
+    {
+        "O que é encapsulamento?": "O que é encapsulamento?",
+        "A prática de restringir o acesso a certos componentes de um objeto":
+        "A prática de restringir o acesso a certos componentes de um objeto"
+    },
+    {
+        "O que é polimorfismo em Java?": "O que é polimorfismo em Java?",
+        "A capacidade de uma variável, função ou objeto de tomar várias formas":
+        "A capacidade de uma variável, função ou objeto de tomar várias formas"
+    },
+    {
+        "O que é uma exceção em Java?": "O que é uma exceção em Java?",
+        "Um evento que interrompe o fluxo normal de um programa":
+        "Um evento que interrompe o fluxo normal de um programa"
+    },
+    {
+        "Como você lida com exceções em Java?": "Como você lida com exceções em Java?",
+        "Usando blocos try-catch": "Usando blocos try-catch"
+    },
+    {
+        "O que é uma classe abstrata?": "O que é uma classe abstrata?",
+        "Uma classe que não pode ser instanciada e pode ter métodos abstratos":
+        "Uma classe que não pode ser instanciada e pode ter métodos abstratos"
+    },
+    {
+        "O que é uma string imutável?": "O que é uma string imutável?",
+        "Uma string cujo valor não pode ser alterado após a criação":
+        "Uma string cujo valor não pode ser alterado após a criação"
+    },
+    {
+        "Como você converte uma string em um número em Java?": "Como você converte uma string em um número em Java?",
+        "Usando métodos como Integer.parseInt() ou Double.parseDouble()":
+        "Usando métodos como Integer.parseInt() ou Double.parseDouble()"
+    },
+    {
+        "O que é o public em um método ou classe?": "O que é o public em um método ou classe?",
+        "Um modificador de acesso que permite que o método ou classe seja acessível de qualquer lugar":
+        "Um modificador de acesso que permite que o método ou classe seja acessível de qualquer lugar"
+    },
+    {
+        "Qual é a diferença entre ArrayList e LinkedList?": "Qual é a diferença entre ArrayList e LinkedList?",
+        "ArrayList é baseado em um array dinâmico, enquanto LinkedList é baseado em uma lista duplamente encadeada":
+        "ArrayList é baseado em um array dinâmico, enquanto LinkedList é baseado em uma lista duplamente encadeada"
+    },
+    {
+        "O que é uma HashMap?": "O que é uma HashMap?",
+        "Uma estrutura de dados que armazena pares chave-valor e não permite chaves duplicadas":
+        "Uma estrutura de dados que armazena pares chave-valor e não permite chaves duplicadas"
+    },
+    {
+        "O que é um HashSet?": "O que é um HashSet?",
+        "Uma coleção que não permite elementos duplicados e é baseada em uma tabela hash":
+        "Uma coleção que não permite elementos duplicados e é baseada em uma tabela hash"
+    },
+    {
+        "Qual é a diferença entre uma lista e um conjunto em Java?": "Qual é a diferença entre uma lista e um conjunto em Java?",
+        "Uma lista permite elementos duplicados e é ordenada, enquanto um conjunto não permite duplicatas e não garante ordem":
+        "Uma lista permite elementos duplicados e é ordenada, enquanto um conjunto não permite duplicatas e não garante ordem"
+    },
+    {
+        "O que é uma enumeração?": "O que é uma enumeração?",
+        "Um tipo especial de classe que representa um grupo de constantes (variáveis imutáveis)":
+        "Um tipo especial de classe que representa um grupo de constantes (variáveis imutáveis)"
+    },
+    {
+        "Como você faz um loop for em Java?": "Como você faz um loop for em Java?",
+        "Usando a sintaxe for (inicialização; condição; atualização) { // bloco de código }":
+        "Usando a sintaxe for (inicialização; condição; atualização) { // bloco de código }"
+    },
+    {
+        "O que é JVM?": "O que é JVM?",
+        "Java Virtual Machine, um motor que executa bytecode Java":
+        "Java Virtual Machine, um motor que executa bytecode Java"
+    },
+    {
+        "O que é JRE?": "O que é JRE?",
+        "Java Runtime Environment, um conjunto de ferramentas para executar aplicações Java":
+        "Java Runtime Environment, um conjunto de ferramentas para executar aplicações Java"
+    },
+    {
+        "O que é JDK?": "O que é JDK?",
+        "Java Development Kit, um kit de ferramentas para desenvolver aplicações Java":
+        "Java Development Kit, um kit de ferramentas para desenvolver aplicações Java"
+    },
+    {
+        "Qual é o propósito do método main() em Java?": "Qual é o propósito do método main() em Java?",
+        "É o ponto de entrada de um aplicativo Java":
+        "É o ponto de entrada de um aplicativo Java"
+    },
+    {
+        "O que é uma classe interna?": "O que é uma classe interna?",
+        "Uma classe definida dentro de outra classe":
+        "Uma classe definida dentro de outra classe"
+    },
+    {
+        "O que são genéricos em Java?": "O que são genéricos em Java?",
+        "Uma maneira de definir classes, interfaces e métodos com parâmetros de tipo":
+        "Uma maneira de definir classes, interfaces e métodos com parâmetros de tipo"
+    },
+    {
+        "Como você realiza a serialização em Java?": "Como você realiza a serialização em Java?",
+        "Usando a interface Serializable": "Usando a interface Serializable"
+    },
+    {
+        "O que é a palavra-chave final?": "O que é a palavra-chave final?",
+        "Indica que um valor não pode ser modificado ou um método não pode ser sobreposto":
+        "Indica que um valor não pode ser modificado ou um método não pode ser sobreposto"
+    },
+    {
+        "O que é sobrecarga de método?": "O que é sobrecarga de método?",
+        "Definir vários métodos com o mesmo nome mas diferentes parâmetros":
+        "Definir vários métodos com o mesmo nome mas diferentes parâmetros"
+    },
+    {
+        "O que é sobreposição de método?": "O que é sobreposição de método?",
+        "Definir um método em uma subclasse com a mesma assinatura de um método na superclasse":
+        "Definir um método em uma subclasse com a mesma assinatura de um método na superclasse"
+    },
+    {
+        "O que é o operador instanceof?": "O que é o operador instanceof?",
+        "Verifica se um objeto é uma instância de uma classe específica":
+        "Verifica se um objeto é uma instância de uma classe específica"
+    },
+    {
+        "O que é um pacote em Java?": "O que é um pacote em Java?",
+        "Um agrupamento de classes e interfaces relacionadas":
+        "Um agrupamento de classes e interfaces relacionadas"
+    },
+    {
+        "Como você importa uma classe de outro pacote?": "Como você importa uma classe de outro pacote?",
+        "Usando a palavra-chave import seguida do nome completo do pacote e classe":
+        "Usando a palavra-chave import seguida do nome completo do pacote e classe"
+    },
+    {
+        "O que é multithreading?": "O que é multithreading?",
+        "A capacidade de um programa executar várias threads simultaneamente":
+        "A capacidade de um programa executar várias threads simultaneamente"
+    },
+    {
+        "O que é o método sleep()?": "O que é o método sleep()?",
+        "Faz a thread atual esperar por um determinado período de tempo":
+        "Faz a thread atual esperar por um determinado período de tempo"
+    },
+    {
+        "Qual é a diferença entre wait() e sleep()?": "Qual é a diferença entre wait() e sleep()?",
+        "wait() libera o lock no objeto e espera até ser notificado, sleep() apenas pausa a thread":
+        "wait() libera o lock no objeto e espera até ser notificado, sleep() apenas pausa a thread"
+    },
+    {
+        "O que é uma synchronized em Java?": "O que é uma synchronized em Java?",
+        "Um bloco de código que só pode ser acessado por uma thread por vez":
+        "Um bloco de código que só pode ser acessado por uma thread por vez"
+    },
+    {
+        "O que é o Garbage Collection?": "O que é o Garbage Collection?",
+        "O processo de liberar memória ocupada por objetos que não são mais usados":
+        "O processo de liberar memória ocupada por objetos que não são mais usados"
+    },
+    {
+        "O que é o transient em Java?": "O que é o transient em Java?",
+        "Indica que um campo não deve ser serializado":
+        "Indica que um campo não deve ser serializado"
+    },
+    {
+        "O que é um bloco try-catch?": "O que é um bloco try-catch?",
+        "Usado para capturar e tratar exceções": "Usado para capturar e tratar exceções"
+    },
+    {
+        "O que é um interface functional?": "O que é um interface functional?",
+        "Uma interface com exatamente um método abstrato":
+        "Uma interface com exatamente um método abstrato"
+    },
+    {
+        "O que é o stream em Java 8?": "O que é o stream em Java 8?",
+        "Uma sequência de elementos suportando operações de agregação e filtragem":
+        "Uma sequência de elementos suportando operações de agregação e filtragem"
+    },
+    {
+        "Como você trabalha com arquivos em Java?": "Como você trabalha com arquivos em Java?",
+        "Usando classes como FileReader, FileWriter, BufferedReader, BufferedWriter":
+        "Usando classes como FileReader, FileWriter, BufferedReader, BufferedWriter"
+    },
+    {
+        "O que é a Optional em Java?": "O que é a Optional em Java?",
+        "Uma classe usada para representar um valor que pode ou não estar presente":
+        "Uma classe usada para representar um valor que pode ou não estar presente"
+    }
+]

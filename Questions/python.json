@@ -1,0 +1,248 @@
+[
+    {
+        "Qual é a saída de print(2 ** 3)?": "Qual é a saída de print(2 ** 3)?",
+        "8": "8"
+    },
+    {
+        "Como se define uma função em Python?":"Como se define uma função em Python?" ,
+        "def": "8"
+    },
+    {
+        "Qual é a saída de print(3 + 4 * 2)?": "Qual é a saída de print(3 + 4 * 2)?",
+        "11": "11"
+    },
+    {
+        "Como se cria uma lista em Python?": "Como se cria uma lista em Python?",
+        "Usando colchetes, por exemplo: []": "Usando colchetes, por exemplo: []"
+    },
+    {
+        "O que é PEP 8?": "O que é PEP 8?",
+        "Guia de estilo para escrever código Python": "Guia de estilo para escrever código Python"
+    },
+    {
+        "Como você pode adicionar um elemento a uma lista em Python?":
+        "Como você pode adicionar um elemento a uma lista em Python?",
+        "Usando o método append(), por exemplo: lista.append(item)":
+        "Usando o método append(), por exemplo: lista.append(item)"
+    },
+    {
+        "O que significa self em um método de classe em Python?":
+        "O que significa self em um método de classe em Python?",
+        "Referência à instância da própria classe": "Referência à instância da própria classe"
+    },
+    {
+        "Qual é o método para remover espaços em branco de uma string?":
+        "Qual é o método para remover espaços em branco de uma string?",
+        "strip()": "strip()"
+    },
+    {
+        "Como você pode inverter uma string em Python?": "Como você pode inverter uma string em Python?",
+        "Usando slicing, por exemplo: string[::-1]": "Usando slicing, por exemplo: string[::-1]"
+    },
+    {
+        "O que é um dicionário em Python?": "O que é um dicionário em Python?",
+        "Uma coleção de pares chave-valor": "Uma coleção de pares chave-valor"
+    },
+    {
+        "Como você pode remover um item de um dicionário": "Como você pode remover um item de um dicionário?",
+        "Usando o método pop() ou a palavra-chave del": "Usando o método pop() ou a palavra-chave del"
+    },
+    {
+        "Qual é a diferença entre list e tuple": "Qual é a diferença entre list e tuple?",
+        "Listas são mutáveis, enquanto tuplas são imutáveis": "Listas são mutáveis, enquanto tuplas são imutáveis"
+    },
+    {
+        "O que faz a função len()?": "O que faz a função len()?",
+        "Retorna o número de itens em um objeto": "Retorna o número de itens em um objeto"
+    },
+    {
+        "O que é uma lambda em Python?": "O que é uma lambda em Python?",
+        "Uma função anônima de uma única linha": "Uma função anônima de uma única linha"
+    },
+    {
+        "O que é uma list comprehension?": "O que é uma list comprehension?",
+        "Uma maneira concisa de criar listas": "Uma maneira concisa de criar listas"
+    },
+    {
+        "Como você pode importar uma biblioteca em Python?": "Como você pode importar uma biblioteca em Python?",
+        "Usando a palavra-chave import": "Usando a palavra-chave import"
+    },
+    {
+        "O que é o Pandas?": "O que é o Pandas?",
+        "Uma biblioteca para análise de dados": "Uma biblioteca para análise de dados"
+    },
+    {
+        "O que faz o método groupby() em Pandas?": "O que faz o método groupby() em Pandas?",
+        "Agrupa os dados por uma ou mais chaves": "Agrupa os dados por uma ou mais chaves"
+    },
+    {
+        "Qual é a diferença entre Series e DataFrame no Pandas?": "Qual é a diferença entre Series e DataFrame no Pandas?",
+        "Uma Series é uma coluna única, enquanto um DataFrame é uma tabela de dados":
+        "Uma Series é uma coluna única, enquanto um DataFrame é uma tabela de dados"
+    },
+    {
+        "Como você pode ler um arquivo CSV usando Pandas?": "Como você pode ler um arquivo CSV usando Pandas?",
+        "Usando a função pd.read_csv()": "Usando a função pd.read_csv()"
+    },
+    {
+        "O que é NumPy?": "O que é NumPy?",
+        "Uma biblioteca para computação científica e array de n-dimensões":
+        "Uma biblioteca para computação científica e array de n-dimensões"
+    },
+    {
+        "Como você cria um array NumPy?": "Como você cria um array NumPy?",
+        "Usando np.array()": "Usando np.array()"
+    },
+    {
+        "O que é o matplotlib?": "O que é o matplotlib?",
+        "Uma biblioteca para visualização de dados": "Uma biblioteca para visualização de dados"
+    },
+    {
+        "Como você pode criar um gráfico de linha em matplotlib?":
+        "Como você pode criar um gráfico de linha em matplotlib?",
+        "Usando plt.plot()": "Usando plt.plot()"
+    },
+    {
+        "O que é scikit-learn?": "O que é scikit-learn?",
+        "Uma biblioteca para machine learning em Python": "Uma biblioteca para machine learning em Python"
+    },
+    {
+        "Qual é a função de train_test_split() em scikit-learn?":
+        "Qual é a função de train_test_split() em scikit-learn?",
+        "Divide os dados em conjuntos de treino e teste":
+        "Divide os dados em conjuntos de treino e teste"
+    },
+    {
+        "O que é uma Regressão Linear?": "O que é uma Regressão Linear?",
+        "Uma técnica de modelagem preditiva para dados contínuos":
+        "Uma técnica de modelagem preditiva para dados contínuos"
+    },
+    {
+        "O que é overfitting?": "O que é overfitting?",
+        "Quando um modelo se ajusta muito bem aos dados de treino, mas falha em generalizar para novos dados":
+        "Quando um modelo se ajusta muito bem aos dados de treino, mas falha em generalizar para novos dados"
+
+    },
+    {
+        "Como você pode evitar overfitting?": "Como você pode evitar overfitting?",
+        "Usando regularização, aumento de dados ou técnicas de validação cruzada":
+        "Usando regularização, aumento de dados ou técnicas de validação cruzada"
+
+    },
+    {
+        "O que é uma Redes Neurais?": "O que é uma Redes Neurais?",
+        "Um modelo de machine learning inspirado na estrutura do cérebro":
+        "Um modelo de machine learning inspirado na estrutura do cérebro"
+
+    },
+    {
+        "O que é um Perceptron?": "O que é um Perceptron?",
+        "A unidade básica de uma rede neural": "A unidade básica de uma rede neural"
+    },
+    {
+        "O que é uma Função de Ativação?": "O que é uma Função de Ativação?",
+        "Uma função que decide se um neurônio deve ser ativado ou não":
+        "Uma função que decide se um neurônio deve ser ativado ou não"
+    },
+    {
+        "O que é Deep Learning?": "O que é Deep Learning?",
+        "Um subcampo do machine learning com redes neurais profundas":
+        "Um subcampo do machine learning com redes neurais profundas"
+    },
+    {
+        "O que é uma Convolutional Neural Network (CNN)?": "O que é uma Convolutional Neural Network (CNN)?",
+        "Uma rede neural usada para processar dados estruturados em grade, como imagens":
+        "Uma rede neural usada para processar dados estruturados em grade, como imagens"
+    },
+    {
+        "O que é uma Recurrent Neural Network (RNN)?": "O que é uma Recurrent Neural Network (RNN)?",
+        "Uma rede neural projetada para processar sequências de dados":
+        "Uma rede neural projetada para processar sequências de dados"
+    },
+    {
+        "O que é TensorFlow?": "O que é TensorFlow?",
+        "Uma biblioteca de machine learning desenvolvida pelo Google":
+        "Uma biblioteca de machine learning desenvolvida pelo Google"
+    },
+    {
+        "Qual é o propósito da Keras?": "Qual é o propósito da Keras?",
+        "Uma API de alto nível para construir e treinar modelos de redes neurais":
+        "Uma API de alto nível para construir e treinar modelos de redes neurais"
+    },
+    {
+        "O que é overfitting em modelos de machine learning?": "O que é overfitting em modelos de machine learning?",
+        "Quando o modelo se ajusta muito bem aos dados de treino e não generaliza para novos dados":
+        "Quando o modelo se ajusta muito bem aos dados de treino e não generaliza para novos dados"
+    },
+    {
+        "Como você pode avaliar a performance de um modelo de classificação?":
+        "Como você pode avaliar a performance de um modelo de classificação?",
+
+        "Usando métricas como accuracy, precision, recall e F1-score":
+        "Usando métricas como accuracy, precision, recall e F1-score"
+    },
+    {
+        "O que é cross-validation?": "O que é cross-validation?",
+        "Uma técnica para avaliar a capacidade de generalização de um modelo":
+        "Uma técnica para avaliar a capacidade de generalização de um modelo"
+    },
+    {
+        "question": "O que é um Random Forest?",
+        "answer": "Um conjunto de árvores de decisão usado para classificação e regressão"
+    },
+    {
+        "O que é o K-means?": "O que é o K-means?",
+        "Um algoritmo de clustering não supervisionado":
+        "Um algoritmo de clustering não supervisionado"
+    },
+    {
+        "Como você pode visualizar um conjunto de dados usando seaborn?":
+        "Como você pode visualizar um conjunto de dados usando seaborn?",
+        "Usando funções como sns.scatterplot(), sns.histplot(), etc.":
+        "Usando funções como sns.scatterplot(), sns.histplot(), etc."
+    },
+    {
+        "O que é PCA em machine learning?": "O que é PCA em machine learning?",
+        "Análise de Componentes Principais, uma técnica de redução de dimensionalidade":
+        "Análise de Componentes Principais, uma técnica de redução de dimensionalidade"
+    },
+    {
+        "Como você pode lidar com dados faltantes em um DataFrame Pandas?":
+        "Como você pode lidar com dados faltantes em um DataFrame Pandas?",
+        "Usando dropna() para remover ou fillna() para substituir valores faltantes":
+        "Usando dropna() para remover ou fillna() para substituir valores faltantes"
+    },
+    {
+        "O que é Gradient Descent?":
+        "O que é Gradient Descent?",
+        "Um algoritmo para encontrar o mínimo de uma função":
+        "Um algoritmo para encontrar o mínimo de uma função"
+    },
+    {
+        "O que é um Hyperparameter em machine learning?":
+        "O que é um Hyperparameter em machine learning?",
+        "Parâmetros de um modelo que são ajustados antes do processo de aprendizado":
+        "Parâmetros de um modelo que são ajustados antes do processo de aprendizado"
+    },
+    {
+        "Como você pode salvar um modelo treinado em scikit-learn?":
+        "Como você pode salvar um modelo treinado em scikit-learn?",
+        "Usando joblib ou pickle":
+        "Usando joblib ou pickle"
+    },
+    {
+        "O que é Exploratory Data Analysis (EDA)?": "O que é Exploratory Data Analysis (EDA)?",
+        "O processo de analisar conjuntos de dados para resumir suas características principais":
+        "O processo de analisar conjuntos de dados para resumir suas características principais"
+    },
+    {
+        "O que é um Outlier?": "O que é um Outlier?",
+        "Um dado que se desvia significativamente dos outros dados":
+        "Um dado que se desvia significativamente dos outros dados"
+    },
+    {
+        "O que é Natural Language Processing (NLP)?": "O que é Natural Language Processing (NLP)?",
+        "Um campo da inteligência artificial focado na interação entre computadores e linguagem humana":
+        "Um campo da inteligência artificial focado na interação entre computadores e linguagem humana"
+    }
+]
