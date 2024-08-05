@@ -1,6 +1,12 @@
 import discord
 from discord.ext import commands
 import asyncio
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+REGISTER_CHANEL = os.getenv('REGISTER_CHANNEL_ID')
 
 
 class Registro(commands.Cog):
@@ -19,7 +25,7 @@ class Registro(commands.Cog):
             "🎨": "MKT e Design",
         }
 
-        self.REGISTRATION_CHANNEL_ID =   # Substitua pelo ID do seu canal de registro
+        self.REGISTRATION_CHANNEL_ID = REGISTER_CHANEL    # Substitua pelo ID do seu canal de registro
         self.NON_REGISTRATION_WARNINGS = {}
 
     @commands.command(name='registro')

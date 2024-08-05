@@ -1,6 +1,11 @@
 import discord
 from discord.ext import commands
-import asyncio
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -17,6 +22,7 @@ async def load_extensions():
         'Modules.BoasVindas',
         'Modules.JogoQuiz',
         'Modules.SlotMachine'
+        'Modules.XPSystem'
     ]
 
     for extension in initial_extensions:
@@ -33,4 +39,4 @@ async def on_ready():
     await load_extensions()
 
 
-bot.run('MTI2NjM0Nzk3NjkyNjgyNjU3OQ.GBLn7I.LBQgRqOr10952lndwEjhvcM2XY1upItcOm1nak')
+bot.run(TOKEN)

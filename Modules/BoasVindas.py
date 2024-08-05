@@ -1,11 +1,15 @@
 import discord
 from discord.ext import commands
 from random import choice
+import os
+from dotenv import load_dotenv
 
-WELCOME_CHANNEL_ID =   # Substitua pelo ID do seu canal de boas-vindas
-CARGOS_CHANNEL_ID = 
-REGRAS_CHANNEL_ID = 
-GERAL_CHANNEL_ID = 
+load_dotenv()
+
+WELCOME_CHANNEL = os.getenv('WELCOME_CHANNEL_ID')
+CARGOS_CHANNEL = os.getenv('CARGOS_CHANNEL_ID')
+REGRAS_CHANNEL = os.getenv('REGRAS_CHANNEL_ID')
+GERAL_CHANNEL = os.getenv('GERAL_CHANNEL_ID')
 
 class BoasVindas(commands.Cog):
     def __init__(self, bot):
