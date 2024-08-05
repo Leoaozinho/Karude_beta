@@ -10,7 +10,6 @@ class JogoQuiz(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.TRIVIA_QUESTIONS = self.load_questions()
-        self.scores = {}
 
     def load_questions(self):
         questions = {}
@@ -31,6 +30,7 @@ class JogoQuiz(commands.Cog):
 
     @commands.command(name='trivia')
     async def trivia(self, ctx):
+        # Criar embed para a mensagem inicial de seleção de categoria
         embed = discord.Embed(
             title="Escolha uma categoria para a trivia!",
             description=(
@@ -44,6 +44,7 @@ class JogoQuiz(commands.Cog):
         )
         category_message = await ctx.send(embed=embed)
 
+        # Adicionar reações para cada categoria
         for emoji in self.EMOJI_TO_CATEGORY.keys():
             await category_message.add_reaction(emoji)
 
@@ -68,6 +69,7 @@ class JogoQuiz(commands.Cog):
 
             question, answer = random.choice(questions)
 
+            # Criar embed para a pergunta
             embed = discord.Embed(
                 title=f"Categoria: {category}",
                 description=f"Pergunta: {question}",
@@ -95,7 +97,6 @@ class JogoQuiz(commands.Cog):
                         description="Parabéns! 🎉",
                         color=discord.Color.green()
                     )
-                    self.scores[ctx.author.name] = self.scores.get(ctx.author.name, 0) + 1
                 else:
                     embed = discord.Embed(
                         title="Incorreto!",
@@ -104,22 +105,8 @@ class JogoQuiz(commands.Cog):
                     )
                 await ctx.send(embed=embed)
 
-    @commands.command(name='ranking')
-    async def ranking(self, ctx):
-        if not self.scores:
-            await ctx.send("Nenhuma pontuação registrada ainda.")
-            return
 
-        ranking = sorted(self.scores.items(), key=lambda x: x[1], reverse=True)
-        description = "\n".join([f"{i + 1}. {user} - {score} pontos" for i, (user, score) in enumerate(ranking)])
-        embed = discord.Embed(
-            title="Ranking de Trivia",
-            description=description,
-            color=discord.Color.gold()
-        )
-        await ctx.send(embed=embed)
-
-
+# Para adicionar o Cog ao bot
 async def setup(bot):
     await bot.add_cog(JogoQuiz(bot))
     
