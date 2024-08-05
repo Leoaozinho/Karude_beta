@@ -21,8 +21,9 @@ async def load_extensions():
         'Modules.registro_cog',
         'Modules.BoasVindas',
         'Modules.JogoQuiz',
-        'Modules.SlotMachine'
-        'Modules.XPSystem'
+        'Modules.SlotMachine',
+        'Modules.XPSystem',
+        'Modules.EconomySystem'
     ]
 
     for extension in initial_extensions:

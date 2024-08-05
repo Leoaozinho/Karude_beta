@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Espada de Ferro",
+        "description": "Uma espada de ferro afiada.",
+        "price": 100
+    },
+    {
+        "id": "2",
+        "name": "Escudo de Madeira",
+        "description": "Um escudo de madeira resistente.",
+        "price": 150
+    },
+    {
+        "id": "3",
+        "name": "Poção de Cura",
+        "description": "Recupera a saúde do usuário.",
+        "price": 50
+    }
+]

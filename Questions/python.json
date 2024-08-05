@@ -187,8 +187,9 @@
         "Uma técnica para avaliar a capacidade de generalização de um modelo"
     },
     {
-        "question": "O que é um Random Forest?",
-        "answer": "Um conjunto de árvores de decisão usado para classificação e regressão"
+        "O que é um Random Forest?": "O que é um Random Forest?",
+        "Um conjunto de árvores de decisão usado para classificação e regressão":
+        "Um conjunto de árvores de decisão usado para classificação e regressão"
     },
     {
         "O que é o K-means?": "O que é o K-means?",

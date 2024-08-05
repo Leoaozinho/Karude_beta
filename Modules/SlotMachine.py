@@ -2,6 +2,7 @@ import random
 from discord.ext import commands
 import discord
 
+
 class SlotMachine(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -62,6 +63,7 @@ class SlotMachine(commands.Cog):
 
         # Envia o embed
         await ctx.send(embed=embed)
+
 
 # Função setup para adicionar o cog
 async def setup(bot):
