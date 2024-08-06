@@ -25,3 +25,13 @@
 > ~~~bash
 > pip3 freeze karude > requirements.txt
 > ~~~
+
+## **Como posso nomear os commit?**
+> Assim:
+
+> "Mxxxx - Descrição do commit"
+
+> ~~~text
+> M -> Modificação
+> x -> numero da modificação, será sempre crescente, confira o repositório antes de fazer o push. S2
+> ~~~
