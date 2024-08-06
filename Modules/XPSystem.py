@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import json
 
-
 class XPSystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -66,7 +65,6 @@ class XPSystem(commands.Cog):
         embed.set_thumbnail(url=member.avatar.url)
 
         await ctx.send(embed=embed)
-
 
 # Para adicionar o Cog ao bot
 async def setup(bot):

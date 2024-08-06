@@ -5,7 +5,6 @@ import asyncio
 import os
 import json
 
-
 class JogoQuiz(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -109,4 +108,3 @@ class JogoQuiz(commands.Cog):
 # Para adicionar o Cog ao bot
 async def setup(bot):
     await bot.add_cog(JogoQuiz(bot))
-    

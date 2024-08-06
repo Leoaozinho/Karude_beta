@@ -15,7 +15,6 @@ intents.members = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-
 async def load_extensions():
     initial_extensions = [
         'Modules.registro_cog',
@@ -33,11 +32,9 @@ async def load_extensions():
         except Exception as e:
             print(f"Failed to load extension {extension}: {e}")
 
-
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name}')
     await load_extensions()
-
 
 bot.run(TOKEN)

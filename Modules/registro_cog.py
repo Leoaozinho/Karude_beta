@@ -8,7 +8,6 @@ load_dotenv()
 
 REGISTER_CHANEL = os.getenv('REGISTER_CHANNEL_ID')
 
-
 class Registro(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -117,7 +116,6 @@ class Registro(commands.Cog):
 
             if role and role in member.roles:
                 await member.remove_roles(role)
-
 
 async def setup(bot):
     await bot.add_cog(Registro(bot))

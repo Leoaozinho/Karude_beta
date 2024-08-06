@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import json
 
-
 class EconomySystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -100,7 +99,6 @@ class EconomySystem(commands.Cog):
             )
 
         await ctx.send(embed=embed)
-
 
 # Para adicionar o Cog ao bot
 async def setup(bot):
