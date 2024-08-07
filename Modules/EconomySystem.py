@@ -8,21 +8,22 @@ class EconomySystem(commands.Cog):
         self.load_data()
 
     def load_data(self):
-        """Load user and shop data from JSON files."""
-        self.xp_data = self.load_json('xp_data.json')
-        self.economy_data = self.load_json('economy_data.json')
-        self.shop_items = self.load_json('shop_items.json')
-        self.user_inventory = self.load_json('user_inventory.json')
+        if not os.path.exists('economy_data.json'):
+            with open('economy_data.json', 'w') as f:
+                json.dump({}, f)
 
-    def load_json(self, filename):
-        """Load a JSON file."""
-        with open(filename, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        with open('economy_data.json', 'r') as f:
+            self.economy_data = json.load(f)
 
-    def save_json(self, filename, data):
-        """Save data to a JSON file."""
-        with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4)
+    def save_data(self):
+        with open('economy_data.json', 'w') as f:
+            json.dump(self.economy_data, f)
+
+    def update_balance(self, user_id, amount):
+        if user_id not in self.economy_data:
+            self.economy_data[user_id] = {"balance": 0, "last_daily": None}
+        self.economy_data[user_id]["balance"] += amount
+        self.save_data()
 
     @commands.command(name='daily')
     async def daily(self, ctx):
