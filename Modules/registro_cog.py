@@ -8,6 +8,7 @@ load_dotenv()
 
 REGISTER_CHANEL = os.getenv('REGISTER_CHANNEL_ID')
 
+
 class Registro(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -24,7 +25,7 @@ class Registro(commands.Cog):
             "🎨": "MKT e Design",
         }
 
-        self.REGISTRATION_CHANNEL_ID = REGISTER_CHANEL    # Substitua pelo ID do seu canal de registro
+        self.REGISTRATION_CHANNEL_ID = REGISTER_CHANEL  # Substitua pelo ID do seu canal de registro
         self.NON_REGISTRATION_WARNINGS = {}
 
     @commands.command(name='registro')
@@ -116,6 +117,7 @@ class Registro(commands.Cog):
 
             if role and role in member.roles:
                 await member.remove_roles(role)
+
 
 async def setup(bot):
     await bot.add_cog(Registro(bot))

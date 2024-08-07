@@ -1,69 +1,75 @@
-import random
-from discord.ext import commands
 import discord
+from discord.ext import commands
+import random
+import json
+import os
+
 
 class SlotMachine(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.difficulty = 1  # Início com dificuldade 1
+        self.load_data()
 
-    @commands.command(name='slot')
-    async def slot_machine(self, ctx):
-        # Define as recompensas baseadas na dificuldade
-        rewards = {
-            1: ["🍒", "🍋", "🔔", "💎", "7️⃣"],
-            2: ["🍒", "🍋", "🔔", "💎", "7️⃣", "🍉"],
-            3: ["🍒", "🍋", "🔔", "💎", "7️⃣", "🍉", "🍇"]
-        }
+    def load_data(self):
+        if not os.path.exists('economy_data.json'):
+            with open('economy_data.json', 'w') as f:
+                json.dump({}, f)
 
-        # Define os prêmios
-        prize_levels = {
-            "🍒🍒🍒": 10,
-            "🍋🍋🍋": 20,
-            "🔔🔔🔔": 30,
-            "💎💎💎": 50,
-            "7️⃣7️⃣7️⃣": 100
-        }
+        with open('economy_data.json', 'r') as f:
+            self.economy_data = json.load(f)
 
-        # Gera o resultado com base na dificuldade
-        symbols = rewards.get(self.difficulty, rewards[1])
-        result = [random.choice(symbols) for _ in range(3)]
+    def save_data(self):
+        with open('economy_data.json', 'w') as f:
+            json.dump(self.economy_data, f)
 
-        # Cria o embed
+    def update_balance(self, user_id, amount):
+        if user_id not in self.economy_data:
+            self.economy_data[user_id] = {"balance": 0}
+        self.economy_data[user_id]["balance"] += amount
+        self.save_data()
+
+    @commands.command(name='slots')
+    async def slots(self, ctx):
+        user_id = str(ctx.author.id)
+
+        if user_id not in self.economy_data:
+            self.economy_data[user_id] = {"balance": 0}
+
+        if self.economy_data[user_id]["balance"] < 25:
+            await ctx.send(
+                f'{ctx.author.mention}, você não tem créditos suficientes para jogar. Você precisa de 25 créditos.')
+            return
+
+        # Deduz 25 créditos
+        self.update_balance(user_id, -25)
+        print(
+            f'Deduzido 25 créditos de {ctx.author.name}. Saldo atual: {self.economy_data[user_id]["balance"]}')  # Debug
+
+        # Os símbolos do Slot Machine
+        symbols = ["🍒", "🍋", "🍉", "🍇", "🍓"]
+        slots = [random.choice(symbols) for _ in range(3)]
+
+        # Criação do embed para mostrar os slots
         embed = discord.Embed(
-            title="🎰 Máquinas de Slot 🎰",
-            description="Tente a sorte e veja se você ganhou!",
+            title="Slot Machine",
+            description=f"{slots[0]} | {slots[1]} | {slots[2]}",
             color=discord.Color.gold()
         )
-        embed.add_field(
-            name="Resultado",
-            value=f"{' | '.join(result)}",
-            inline=False
-        )
 
-        # Verifica se houve algum prêmio
-        result_str = "".join(result)
-        prize = prize_levels.get(result_str, 0)
-        if prize > 0:
-            embed.add_field(
-                name="🏆 Parabéns! 🏆",
-                value=f"Você ganhou {prize} pontos!",
-                inline=False
-            )
-            self.difficulty += 1  # Aumenta a dificuldade
+        # Verifica se o jogador ganhou algo
+        if slots[0] == slots[1] == slots[2]:
+            prize = 100
+            embed.add_field(name="Resultado", value=f"Parabéns! Você ganhou {prize} créditos!")
+            self.update_balance(user_id, prize)
+            print(
+                f'Adicionado {prize} créditos para {ctx.author.name}. Saldo atual: '
+                f'{self.economy_data[user_id]["balance"]}')  # Debug
         else:
-            embed.add_field(
-                name="<:badge5:1259507927732191335> Não foi dessa vez! <:badge5:1259507927732191335>",
-                value="Tente novamente para ganhar prêmios!",
-                inline=False
-            )
-            if self.difficulty > 1:
-                self.difficulty -= 1  # Diminui a dificuldade
+            embed.add_field(name="Resultado", value="Que pena! Você não ganhou desta vez. Tente novamente!")
 
-        # Envia o embed
         await ctx.send(embed=embed)
 
-# Função setup para adicionar o cog
+
+# Para adicionar o Cog ao bot
 async def setup(bot):
     await bot.add_cog(SlotMachine(bot))
-    print("Comando slot registrado.")
