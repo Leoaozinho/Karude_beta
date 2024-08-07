@@ -1,12 +1,24 @@
 import discord
 from discord.ext import commands
 import json
+import os
+from datetime import datetime, timedelta
 
 class EconomySystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.xp_data = self.load_json('xp_data.json')
+        self.economy_data = self.load_json('economy_data.json')
+        self.shop_items = self.load_json('shop_items.json')
+        self.user_inventory = self.load_json('user_inventory.json')
         self.load_data()
 
+    def load_json(self, file_path):
+        if not os.path.exists(file_path):
+            return {}
+        with open(file_path, 'r') as f:
+            return json.load(f)
+        
     def load_data(self):
         if not os.path.exists('economy_data.json'):
             with open('economy_data.json', 'w') as f:
@@ -18,6 +30,11 @@ class EconomySystem(commands.Cog):
     def save_data(self):
         with open('economy_data.json', 'w') as f:
             json.dump(self.economy_data, f)
+
+    
+    def save_json(self, filename, data):
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
 
     def update_balance(self, user_id, amount):
         if user_id not in self.economy_data:
