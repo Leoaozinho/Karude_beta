@@ -1,6 +1,7 @@
 from random import randint
 from discord.ext import commands
 import discord
+import re
 
 class Dado(commands.Cog):
     def __init__(self, bot):
@@ -30,46 +31,21 @@ class Dado(commands.Cog):
 
         if lowered == '':
             embed.title = "Tipos de Dados"
-            embed.description = ('Você pode rolar diferentes tipos de dados, basta digitar `!dado` seguido de:\n'
+            embed.description = ('Você pode rolar diferentes tipos de dados, basta digitar `!dado` seguido de um número:\n'
                                  '- dado 4\n'
                                  '- dado 6\n'
                                  '- dado 8\n'
                                  '- dado 10\n'
                                  '- dado 12\n'
                                  '- dado 20\n'
-                                 '- dado 100')
+                                 '- dado 100'
+                                 '\n...')
             return embed
-
-        if '100' in lowered:
-            embed.title = "Rolagem de d100"
-            embed.description = f'Resultado: {randint(1, 100)} 🎲'
-            return embed
-        elif '20' in lowered:
-            embed.title = "Rolagem de d20"
-            embed.description = f'Resultado: {randint(1, 20)} 🎲'
-            return embed
-        elif '12' in lowered:
-            embed.title = "Rolagem de d12"
-            embed.description = f'Resultado: {randint(1, 12)} 🎲'
-            return embed
-        elif '10' in lowered:
-            embed.title = "Rolagem de d10"
-            embed.description = f'Resultado: {randint(1, 10)} 🎲'
-            return embed
-        elif '8' in lowered:
-            embed.title = "Rolagem de d8"
-            embed.description = f'Resultado: {randint(1, 8)} 🎲'
-            return embed
-        elif '6' in lowered:
-            embed.title = "Rolagem de d6"
-            embed.description = f'Resultado: {randint(1, 6)} 🎲'
-            return embed
-        elif '4' in lowered:
-            embed.title = "Rolagem de d4"
-            embed.description = f'Resultado: {randint(1, 4)} 🎲'
-            return embed
-
-        return None
+        
+        match_number=re.search(r'\d+', lowered).group()
+        embed.title = f"Rolagem de {match_number}"
+        embed.description = f'Resultado: {randint(1, int(match_number))} 🎲'
+        return embed
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Dado(bot))
