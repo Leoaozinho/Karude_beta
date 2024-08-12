@@ -4,6 +4,7 @@ import json
 import os
 from datetime import datetime, timedelta
 
+
 class EconomySystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -18,7 +19,7 @@ class EconomySystem(commands.Cog):
             return {}
         with open(file_path, 'r') as f:
             return json.load(f)
-        
+
     def load_data(self):
         if not os.path.exists('economy_data.json'):
             with open('economy_data.json', 'w') as f:
@@ -31,7 +32,6 @@ class EconomySystem(commands.Cog):
         with open('economy_data.json', 'w') as f:
             json.dump(self.economy_data, f)
 
-    
     def save_json(self, filename, data):
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4)
@@ -51,7 +51,11 @@ class EconomySystem(commands.Cog):
         last_daily = self.economy_data.get(user_id, {}).get("last_daily")
 
         if last_daily:
-            last_daily = datetime.strptime(last_daily, "%Y-%m-%d %H:%M:%S")
+            try:
+                last_daily = datetime.strptime(last_daily, "%Y-%m-%d %H:%M:%S")
+            except ValueError:
+                last_daily = datetime.strptime(last_daily, "%Y-%m-%d %H:%M:%S.%f")
+
             if now - last_daily < timedelta(days=1):
                 remaining_time = timedelta(days=1) - (now - last_daily)
                 hours, remainder = divmod(remaining_time.seconds, 3600)
@@ -60,6 +64,12 @@ class EconomySystem(commands.Cog):
                     f'{ctx.author.mention}, você já coletou seus créditos diários! Tente novamente em {hours}h {minutes}m {seconds}s.')
                 return
 
+        # Conceder créditos diários e salvar o tempo atual
+        self.update_balance(user_id, 150)  # Atualizar o saldo do usuário
+        self.economy_data[user_id]["last_daily"] = now.strftime("%Y-%m-%d %H:%M:%S")
+        self.save_data()  # Salvar os dados atualizados
+
+        await ctx.send(f'{ctx.author.mention}, você recebeu 150 créditos diários!')
         self.update_balance(user_id, 150)
         self.economy_data[user_id]["last_daily"] = now.strftime("%Y-%m-%d %H:%M:%S.%f")
         self.save_data()
@@ -148,6 +158,7 @@ class EconomySystem(commands.Cog):
             )
 
         await ctx.send(embed=embed)
+
 
 # Para adicionar o Cog ao bot
 async def setup(bot):

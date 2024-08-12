@@ -1,8 +1,8 @@
+import random
 import discord
 from discord.ext import commands
-import random
-import json
 import os
+import json
 
 
 class SlotMachine(commands.Cog):
@@ -45,19 +45,33 @@ class SlotMachine(commands.Cog):
         print(
             f'Deduzido 25 créditos de {ctx.author.name}. Saldo atual: {self.economy_data[user_id]["balance"]}')  # Debug
 
+        # Enviar GIF antes do embed
+        slot_machine_gif_url = 'https://giphy.com/gifs/transparent-pokemon-dGD5YHl8xW6c'  # Substitua pelo URL do GIF
+        await ctx.send(slot_machine_gif_url)
+
         # Os símbolos do Slot Machine
         symbols = ["🍒", "🍋", "🍉", "🍇", "🍓"]
-        slots = [random.choice(symbols) for _ in range(3)]
+        slots = [[random.choice(symbols) for _ in range(3)] for _ in range(3)]
 
         # Criação do embed para mostrar os slots
         embed = discord.Embed(
             title="Slot Machine",
-            description=f"{slots[0]} | {slots[1]} | {slots[2]}",
+            description=f"{slots[0][0]} | {slots[0][1]} | {slots[0][2]}\n"
+                        f"{slots[1][0]} | {slots[1][1]} | {slots[1][2]}\n"
+                        f"{slots[2][0]} | {slots[2][1]} | {slots[2][2]}",
             color=discord.Color.gold()
         )
 
         # Verifica se o jogador ganhou algo
-        if slots[0] == slots[1] == slots[2]:
+        def check_win(slot):
+            return (slot[0] == slot[1] == slot[2] or  # Horizontal
+                    [slot[0][0], slot[1][1], slot[2][2]] == [slot[0][2], slot[1][1], slot[2][0]] or  # Diagonal
+                    [slot[0][0], slot[1][0], slot[2][0]] == [slot[0][1], slot[1][1], slot[2][1]] == [slot[0][2],
+                                                                                                     slot[1][2],
+                                                                                                     slot[2][
+                                                                                                         2]])  # Vertical
+
+        if check_win(slots):
             prize = 100
             embed.add_field(name="Resultado", value=f"Parabéns! Você ganhou {prize} créditos!")
             self.update_balance(user_id, prize)

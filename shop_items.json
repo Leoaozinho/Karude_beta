@@ -13,8 +13,8 @@
     },
     {
         "id": "3",
-        "name": "Poção de Cura",
-        "description": "Recupera a saúde do usuário.",
+        "name": "Pocao de Cura",
+        "description": "Recupera a saude do usuario.",
         "price": 50
     }
 ]
