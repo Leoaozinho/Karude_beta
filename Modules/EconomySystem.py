@@ -4,7 +4,6 @@ import json
 import os
 from datetime import datetime, timedelta
 
-
 class EconomySystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -45,7 +44,7 @@ class EconomySystem(commands.Cog):
     @commands.command(name='daily')
     async def daily(self, ctx):
         user_id = str(ctx.author.id)
-        self.load_data()  # Reload data to get the most up-to-date information
+        self.load_data() # Reload data to get the most up-to-date information
 
         now = datetime.utcnow()
         last_daily = self.economy_data.get(user_id, {}).get("last_daily")
@@ -65,14 +64,9 @@ class EconomySystem(commands.Cog):
                 return
 
         # Conceder créditos diários e salvar o tempo atual
-        self.update_balance(user_id, 150)  # Atualizar o saldo do usuário
+        self.update_balance(user_id, 150) # Atualizar o saldo do usuário
         self.economy_data[user_id]["last_daily"] = now.strftime("%Y-%m-%d %H:%M:%S")
-        self.save_data()  # Salvar os dados atualizados
-
-        await ctx.send(f'{ctx.author.mention}, você recebeu 150 créditos diários!')
-        self.update_balance(user_id, 150)
-        self.economy_data[user_id]["last_daily"] = now.strftime("%Y-%m-%d %H:%M:%S.%f")
-        self.save_data()
+        self.save_data() # Salvar os dados atualizados
 
         await ctx.send(f'{ctx.author.mention}, você recebeu 150 créditos diários!')
 
@@ -158,7 +152,6 @@ class EconomySystem(commands.Cog):
             )
 
         await ctx.send(embed=embed)
-
 
 # Para adicionar o Cog ao bot
 async def setup(bot):

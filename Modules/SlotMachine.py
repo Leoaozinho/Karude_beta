@@ -4,7 +4,6 @@ from discord.ext import commands
 import os
 import json
 
-
 class SlotMachine(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -76,13 +75,12 @@ class SlotMachine(commands.Cog):
             embed.add_field(name="Resultado", value=f"Parabéns! Você ganhou {prize} créditos!")
             self.update_balance(user_id, prize)
             print(
-                f'Adicionado {prize} créditos para {ctx.author.name}. Saldo atual: '
-                f'{self.economy_data[user_id]["balance"]}')  # Debug
+                f'Adicionado {prize} créditos para {ctx.author.name}.'
+                f' Saldo atual: {self.economy_data[user_id]["balance"]}')  # Debug
         else:
             embed.add_field(name="Resultado", value="Que pena! Você não ganhou desta vez. Tente novamente!")
 
         await ctx.send(embed=embed)
-
 
 # Para adicionar o Cog ao bot
 async def setup(bot):
