@@ -5,7 +5,6 @@ import asyncio
 import os
 import json
 
-
 class JogoQuiz(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -50,9 +49,9 @@ class JogoQuiz(commands.Cog):
 
         def check_reaction(reaction, user):
             return (
-                    user == ctx.author and
-                    str(reaction.emoji) in self.EMOJI_TO_CATEGORY and
-                    reaction.message.id == category_message.id
+                user == ctx.author and
+                str(reaction.emoji) in self.EMOJI_TO_CATEGORY and
+                reaction.message.id == category_message.id
             )
 
         try:
@@ -118,7 +117,6 @@ class JogoQuiz(commands.Cog):
 
         with open('economy_data.json', 'w') as f:
             json.dump(economy_data, f)
-
 
 # Para adicionar o Cog ao bot
 async def setup(bot):

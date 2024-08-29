@@ -15,23 +15,26 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
+
 @bot.event
 async def on_ready():
     for filename in os.listdir('./Modules'):
         if filename.endswith('.py') and filename != '__init__.py':
             try:
                 await bot.load_extension(f'Modules.{filename[:-3]}')
-                print(f'{filename[:-3]} carregado com sucesso.') # comente este print quando for pra versão live.
+                print(f'{filename[:-3]} carregado com sucesso.')  # comente este print quando for pra versão live.
             except Exception as e:
-                print(f'Falha ao carregar {filename[:-3]}: {e}') # esse pode deixar, ele retorna erro quando existe.
-    
+                print(f'Falha ao carregar {filename[:-3]}: {e}')  # esse pode deixar, ele retorna erro quando existe.
+
     print(f'Bot conectado como {bot.user}')
+
 
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('Ta faltando parametro aí, tenta **!help**')
+        await ctx.send('Não conheço esse parâmetro, tenta usar o **!socorro**')
     elif isinstance(error, commands.CommandNotFound):
-        await ctx.send('Esse comando não existe mané, tenta **!help**')
+        await ctx.send('Esse comando não existe, tenta usar o **!socorro**')
+
 
 bot.run(TOKEN)
