@@ -13,7 +13,7 @@ intents.reactions = True
 intents.guilds = True
 intents.members = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='k!', intents=intents)
 
 
 async def load_extensions():

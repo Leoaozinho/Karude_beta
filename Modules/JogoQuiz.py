@@ -5,6 +5,7 @@ import asyncio
 import os
 import json
 
+
 class JogoQuiz(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -93,9 +94,10 @@ class JogoQuiz(commands.Cog):
                 if msg.content.lower() == answer.lower():
                     embed = discord.Embed(
                         title="Correto!",
-                        description="Parabéns! 🎉",
+                        description="Parabéns! 🎉 Você ganhou 100 créditos!",
                         color=discord.Color.green()
                     )
+                    await self.update_balance(ctx.author.id, 100)  # Atualizar saldo com 100 créditos
                 else:
                     embed = discord.Embed(
                         title="Incorreto!",
@@ -103,6 +105,19 @@ class JogoQuiz(commands.Cog):
                         color=discord.Color.red()
                     )
                 await ctx.send(embed=embed)
+
+    async def update_balance(self, user_id, amount):
+        """Função para atualizar o saldo do usuário. Deve ser integrada ao sistema de economia existente."""
+        with open('economy_data.json', 'r') as f:
+            economy_data = json.load(f)
+
+        if str(user_id) not in economy_data:
+            economy_data[str(user_id)] = {"balance": 0}
+
+        economy_data[str(user_id)]["balance"] += amount
+
+        with open('economy_data.json', 'w') as f:
+            json.dump(economy_data, f)
 
 
 # Para adicionar o Cog ao bot

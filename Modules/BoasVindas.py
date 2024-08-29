@@ -6,10 +6,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-WELCOME_CHANNEL = os.getenv('WELCOME_CHANNEL_ID')
-CARGOS_CHANNEL = os.getenv('CARGOS_CHANNEL_ID')
-REGRAS_CHANNEL = os.getenv('REGRAS_CHANNEL_ID')
-GERAL_CHANNEL = os.getenv('GERAL_CHANNEL_ID')
 
 class BoasVindas(commands.Cog):
     def __init__(self, bot):
@@ -28,6 +24,7 @@ class BoasVindas(commands.Cog):
                 f"Salve {member.mention} <:1b:1259507885948534896>, de uma olhada no canal de <#{CARGOS_CHANNEL}> (≧︶≦))(￣▽￣ )ゞ",
                 f"Bem vindo ao GC dos gurizes {member.mention} <:actually:1263690743864758395>, trouxe os refris? (￣y▽,￣)╭"
             ]))
+
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(BoasVindas(bot))
