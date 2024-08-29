@@ -33,5 +33,6 @@
 
 > ~~~text
 > M -> Modificação
-> x -> numero da modificação, será sempre crescente, confira o repositório antes de fazer o push. S2
+> x -> numero da modificação, será sempre crescente
+> Confira o repositório antes de fazer o push. S2
 > ~~~

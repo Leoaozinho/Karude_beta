@@ -1,3 +1,5 @@
 .env
-/karude
+karude/
 __pycache__/
+.vscode/
+dev_stuffs/

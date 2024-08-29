@@ -4,12 +4,10 @@ from discord.ext import commands
 import os
 import json
 
-
 class SlotMachine(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.load_data()
-        self.accumulated_prize = 0  # Variável para armazenar os créditos acumulados
 
     def load_data(self):
         if not os.path.exists('economy_data.json'):
@@ -73,19 +71,16 @@ class SlotMachine(commands.Cog):
                                                                                                          2]])  # Vertical
 
         if check_win(slots):
-            prize = 100 + self.accumulated_prize  # Adiciona o valor acumulado ao prêmio
+            prize = 100
             embed.add_field(name="Resultado", value=f"Parabéns! Você ganhou {prize} créditos!")
             self.update_balance(user_id, prize)
             print(
-                f'Adicionado {prize} créditos para {ctx.author.name}. Saldo atual: '
-                f'{self.economy_data[user_id]["balance"]}')  # Debug
-            self.accumulated_prize = 0  # Reseta o valor acumulado após a vitória
+                f'Adicionado {prize} créditos para {ctx.author.name}.'
+                f' Saldo atual: {self.economy_data[user_id]["balance"]}')  # Debug
         else:
             embed.add_field(name="Resultado", value="Que pena! Você não ganhou desta vez. Tente novamente!")
-            self.accumulated_prize += 25  # Acumula os créditos que o jogador perdeu
 
         await ctx.send(embed=embed)
-
 
 # Para adicionar o Cog ao bot
 async def setup(bot):
