@@ -5,7 +5,7 @@ class Socorro(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='socorro')
+    @commands.command(name='help')
     async def socorro_command(self, ctx, *args):
         user_message = ' '.join(args)
         embed = self.get_response_embed(user_message)
@@ -29,8 +29,8 @@ class Socorro(commands.Cog):
 
         if lowered == '':
             embed.title = "Comandos Disponíveis"
-            embed.description = ('Digite !socorro comandos para ver os comandos que eu sei <:actually:1263690743864758395>\n'
-                                 'Digite !socorro falas para ver as falas que eu respondo quando chamada <:1b:1259507885948534896>')
+            embed.description = ('Digite !help comandos para ver os comandos que eu sei <:actually:1263690743864758395>\n'
+                                 'Digite !help falas para ver as falas que eu respondo quando chamada <:1b:1259507885948534896>')
             return embed
 
         if 'falas' in lowered:
@@ -52,7 +52,7 @@ class Socorro(commands.Cog):
         elif 'comandos' in lowered:
             embed.title = "Comandos Disponíveis"
             embed.description = ('Os comandos que eu aprendi são:\n'
-                                 '- socorro\n'
+                                 '- help\n'
                                  '- trivia\n'
                                  '- slot\n'
                                  '- falas\n'

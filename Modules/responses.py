@@ -17,7 +17,6 @@ class Responses(commands.Cog):
 
         # Verifica se a mensagem está vazia
         if not user_message:
-            print('(A mensagem estava vazia porque as intenções provavelmente não estavam ativadas)')
             return
 
         response = self.get_response(user_message)
@@ -33,7 +32,8 @@ class Responses(commands.Cog):
                 # Log para outros tipos de erros
                 print(f'Erro ao enviar mensagem: {e}')
         else:
-            print('(Resposta vazia não enviada)')
+            # Resposta vazia não enviada
+            return
 
     def get_response(self, user_input: str) -> str:
         lowered = user_input.lower()

@@ -8,13 +8,13 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
+intents.members = True
 intents.messages = True
 intents.guilds = True
 intents.reactions = True
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
-
+bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 
 @bot.event
 async def on_ready():
@@ -28,13 +28,11 @@ async def on_ready():
 
     print(f'Bot conectado como {bot.user}')
 
-
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('Não conheço esse parâmetro, tenta usar o **!socorro**')
+        await ctx.send('Não conheço esse parâmetro, tenta usar o **!help**')
     elif isinstance(error, commands.CommandNotFound):
-        await ctx.send('Esse comando não existe, tenta usar o **!socorro**')
-
+        await ctx.send('Esse comando não existe, tenta usar o **!help**')
 
 bot.run(TOKEN)
