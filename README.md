@@ -3,12 +3,12 @@
 
 > **criar ambiente de desenvolvimento python**
 > ~~~bash
-> python3 -m venv karude
+> python3 -m venv .venv
 > ~~~
 
 > **acessar o ambiente de desenvolvimento**
 > ~~~bash
-> source karude/bin/activate
+> source .venv/bin/activate
 > ~~~
 
 > **sair do ambientede de desenvolvimento**
@@ -35,4 +35,5 @@
 > M -> Modificação
 > x -> numero da modificação, será sempre crescente
 > Confira o repositório antes de fazer o push. S2
+> Logo o Brunitux automatiza isso, senta lá Jéssica
 > ~~~
