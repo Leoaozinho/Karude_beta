@@ -66,10 +66,7 @@ class SlotMachine(commands.Cog):
         def check_win(slot):
             return (slot[0] == slot[1] == slot[2] or  # Horizontal
                     [slot[0][0], slot[1][1], slot[2][2]] == [slot[0][2], slot[1][1], slot[2][0]] or  # Diagonal
-                    [slot[0][0], slot[1][0], slot[2][0]] == [slot[0][1], slot[1][1], slot[2][1]] == [slot[0][2],
-                                                                                                     slot[1][2],
-                                                                                                     slot[2][
-                                                                                                         2]])  # Vertical
+                    [slot[0][0], slot[1][0], slot[2][0]] == [slot[0][1], slot[1][1], slot[2][1]] == [slot[0][2], slot[1][2], slot[2][2]])  # Vertical
 
         if check_win(slots):
             prize = 100 + self.accumulated_prize  # Adiciona o valor acumulado ao prêmio
