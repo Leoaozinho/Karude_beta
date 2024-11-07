@@ -9,14 +9,14 @@ def info_user(user_id):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT userId, userXp, userLevel FROM usuarios WHERE userId = ?", (user_id,))
+    cursor.execute("SELECT userId, userXp, userLevel, userWallet FROM usuarios WHERE userId = ?", (user_id,))
     usuario = cursor.fetchone()
 
     conn.close()
 
     if usuario:
-        userId, userXp, userLevel = usuario
-        message = (f"XP: {userXp}\nNível: {userLevel}")
+        userId, userXp, userLevel, userWallet = usuario
+        message = (f"XP: {userXp}\nNível: {userLevel}\nMoedas: {userWallet}\n")
         return message
     else:
         return "Usuário não encontrado no banco de dados."

@@ -22,7 +22,7 @@ async def on_ready():
         if filename.endswith('.py') and filename != '__init__.py':
             try:
                 await bot.load_extension(f'Modules.{filename[:-3]}')
-                print(f'{filename[:-3]} carregado com sucesso.')  # comente este print quando for pra versão live.
+                # print(f'{filename[:-3]} carregado com sucesso.')  # comente este print quando for pra versão live.
             except Exception as e:
                 print(f'Falha ao carregar {filename[:-3]}: {e}')  # esse pode deixar, ele retorna erro quando existe.
 
