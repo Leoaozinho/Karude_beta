@@ -14,7 +14,7 @@ class clear(commands.Cog):
         if cargo in ctx.author.roles:
             await ctx.channel.purge(limit=number+1)
             time.sleep(1)
-            await ctx.send(f"{str(number)} mensagens deletadas")
+            # await ctx.send(f"{str(number)} mensagens deletadas")
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(clear(bot))
