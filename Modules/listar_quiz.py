@@ -8,7 +8,7 @@ db_path = os.path.join(os.path.dirname(__file__), '../users', 'users.db')
 class listar_quiz(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.role_id = 1263827423569645710  # ID do cargo necessário para usar o comando
+        self.role_id = 1100472796510957589  # ID do cargo necessário para usar o comando
 
     @commands.command(name="listar_quiz")
     async def listar_quiz(self, ctx):
