@@ -2,17 +2,16 @@
 import sqlite3
 import os
 
-import os
-import sqlite3
-
 class DatabaseConnection:
     def __init__(self, db_filename="user.db"):
         base_dir = os.path.dirname(os.path.dirname(__file__))  # Sobe uma pasta
         db_dir = os.path.join(base_dir, "Database")
         os.makedirs(db_dir, exist_ok=True)
+
         self.db_path = os.path.join(db_dir, db_filename)
-        self.conn = sqlite3.connect(self.db_path)
-        self.cursor = self.conn.cursor()
+        self.conn = None
+        self.cursor = None
+
         self.connect()
         self.create_user_table_if_not_exists()
 
@@ -21,8 +20,9 @@ class DatabaseConnection:
             self.conn = sqlite3.connect(self.db_path)
             self.cursor = self.conn.cursor()
             self.cursor.execute("PRAGMA foreign_keys = ON")
+            print("[DB] Conexão com o banco de dados estabelecida com sucesso.")
         except sqlite3.Error as e:
-            print(f"[Erro na conexão com SQLite]: {e}")
+            print(f"[ERRO] Falha ao conectar com SQLite: {e}")
 
     def commit(self):
         if self.conn:
@@ -31,21 +31,20 @@ class DatabaseConnection:
     def close(self):
         if self.conn:
             self.conn.close()
+            print("[DB] Conexão com banco de dados encerrada.")
 
     def execute(self, query, params=()):
         try:
             self.cursor.execute(query, params)
             self.commit()
         except sqlite3.Error as e:
-            print(f"[Erro ao executar query]: {e}")
+            print(f"[ERRO] ao executar query: {query} | Erro: {e}")
 
     def fetchone(self):
         return self.cursor.fetchone()
 
     def fetchall(self):
         return self.cursor.fetchall()
-
-    # --- NOVAS FUNÇÕES PARA INTEGRAÇÃO COM O COG DO USUÁRIO ---
 
     def create_user_table_if_not_exists(self):
         self.execute("""
@@ -58,23 +57,22 @@ class DatabaseConnection:
         """)
 
     def ensure_user_exists(self, user_id):
-        self.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
-        if not self.fetchone():
-            self.execute("INSERT INTO users (user_id, xp, nivel, saldo) VALUES (?, 0, 1, 0)", (user_id,))
+        try:
+            self.cursor.execute("SELECT 1 FROM users WHERE user_id = ?", (user_id,))
+            if not self.cursor.fetchone():
+                self.cursor.execute(
+                    "INSERT INTO users (user_id, xp, nivel, saldo) VALUES (?, 0, 1, 0)",
+                    (user_id,)
+                )
+                self.conn.commit()
+                print(f"[DB] Novo usuário adicionado ao banco: {user_id}")
+        except Exception as e:
+            print(f"[ERRO] Falha ao garantir existência do usuário {user_id}: {e}")
 
     def get_user_info(self, user_id):
-        self.execute("SELECT xp, nivel, saldo FROM users WHERE user_id = ?", (user_id,))
-        result = self.fetchone()
-        if result:
-            xp, nivel, saldo = result
-            return {
-                "xp": xp,
-                "nivel": nivel,
-                "saldo": saldo
-            }
-        else:
-            return {
-                "xp": 0,
-                "nivel": 1,
-                "saldo": 0
-            }
+        try:
+            self.cursor.execute("SELECT xp, nivel, saldo FROM users WHERE user_id = ?", (user_id,))
+            return self.cursor.fetchone()
+        except Exception as e:
+            print(f"[ERRO] Falha ao buscar dados do usuário {user_id}: {e}")
+            return None
