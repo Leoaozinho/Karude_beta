@@ -18,13 +18,14 @@ bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 
 @bot.event
 async def on_ready():
-    for filename in os.listdir('./Modules'):
-        if filename.endswith('.py') and filename != '__init__.py':
-            try:
-                await bot.load_extension(f'Modules.{filename[:-3]}')
-                # print(f'{filename[:-3]} carregado com sucesso.')  # comente este print quando for pra versão live.
-            except Exception as e:
-                print(f'Falha ao carregar {filename[:-3]}: {e}')  # esse pode deixar, ele retorna erro quando existe.
+    modules_path = os.path.join(os.path.dirname(__file__), 'Modules')
+    for filename in os.listdir(modules_path):
+            if filename.endswith('.py') and filename != '__init__.py':
+                try:
+                    await bot.load_extension(f'Modules.{filename[:-3]}')
+                    # print(f'{filename[:-3]} carregado com sucesso.')  # comente este print quando for pra versão live.
+                except Exception as e:
+                    print(f'Falha ao carregar {filename[:-3]}: {e}')  # esse pode deixar, ele retorna erro quando existe.
 
     print(f'Bot conectado como {bot.user}')
 
