@@ -37,3 +37,19 @@
 > Confira o repositório antes de fazer o push. S2
 > Logo o Brunitux automatiza isso, senta lá Jéssica
 > ~~~
+
+
+## **Criar banco de dados caso não exista alguma tabela**
+> ~~~bash
+> python criar-db.py
+> ~~~
+
+## **Ler o conteúdo de todo o banco de dados do arquivo .db**
+> ~~~bash
+> python ler-tabela.py
+> ~~~
+
+> Escreva as criações das tabelas manualmente no arquivo "ler-tabela.py"
+> para que não haja criação recursiva de tabelas em cada comando,
+> assim cada tabela só é criada quando necessário, evitando consultas
+> extras ao banco de dados.
