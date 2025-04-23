@@ -49,7 +49,7 @@
 > python ler-tabela.py
 > ~~~
 
-> Escreva as criações das tabelas manualmente no arquivo "ler-tabela.py"
+> Escreva as criações das tabelas manualmente no arquivo "criar-db.py"
 > para que não haja criação recursiva de tabelas em cada comando,
 > assim cada tabela só é criada quando necessário, evitando consultas
 > extras ao banco de dados.
