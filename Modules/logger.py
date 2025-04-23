@@ -4,7 +4,7 @@ from discord.ext import commands
 class Logger(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.log_channel_id = 1363985537165430874  # Substitua com o ID real
+        self.log_channel_id = 1263682856941649982  # Substitua com o ID real
 
     async def log(self, message: str):
         channel = self.bot.get_channel(self.log_channel_id)

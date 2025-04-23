@@ -1,48 +1,63 @@
+import os
+import sqlite3
 import discord
 from discord.ext import commands
-from Modules.Database.db_connection import DatabaseConnection
 
 class User(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.db = DatabaseConnection()
 
-@commands.command(name='user')
-async def user_command(self, ctx, membro: discord.Member = None):
-    membro = membro or ctx.author
-    userId = membro.id
-    userName = membro.name
-    avatar = membro.avatar.url if membro.avatar else membro.default_avatar.url
+    @commands.command(name='user')
+    async def user_command(self, ctx, membro: discord.Member = None):
+        membro = membro or ctx.author
+        user_id = membro.id
+        user_name = membro.name
+        avatar_url = membro.avatar.url if membro.avatar else membro.default_avatar.url
 
-    try:
-        self.db.ensure_user_exists(userId)
-        result = self.db.get_user_info(userId)
+        # Caminho absoluto para o banco de dados
+        db_path = os.path.join(os.path.dirname(__file__), '..', 'users', 'users.db')
 
-        if result and all(r is not None for r in result):
-            xp, nivel, saldo = result
-        else:
-            print(f"[ALERTA] Dados incompletos ou ausentes para o usuário {userId}.")
-            xp = nivel = saldo = 0
+        try:
+            # Conectando ao banco de dados
+            with sqlite3.connect(db_path) as conn:
+                cursor = conn.cursor()
 
-    except Exception as e:
-        print(f"[ERRO] ao buscar dados do usuário {userId}: {e}")
-        await ctx.send("❌ Ocorreu um erro ao buscar os dados do usuário.")
-        return
+                # Verifica se o usuário já existe, senão insere
+                cursor.execute("SELECT 1 FROM usuarios WHERE userId = ?", (user_id,))
+                if cursor.fetchone() is None:
+                    cursor.execute("INSERT INTO usuarios (userId) VALUES (?)", (user_id,))
+                    conn.commit()
 
-    embed = discord.Embed(
-        title=f"📋 Perfil de {userName}",
-        color=discord.Color.blue()
-    )
-    embed.add_field(name="🔢 Nível", value=str(nivel), inline=True)
-    embed.add_field(name="⭐ XP", value=str(xp), inline=True)
-    embed.add_field(name="💰 Créditos", value=f"{saldo} créditos", inline=True)
-    embed.set_thumbnail(url=avatar)
-    embed.set_footer(text=f"Solicitado por {ctx.author}", icon_url=ctx.author.avatar.url)
+                # Busca os dados do usuário
+                cursor.execute(
+                    "SELECT userXp, userLevel, userWallet FROM usuarios WHERE userId = ?",
+                    (user_id,)
+                )
+                result = cursor.fetchone()
 
-    await ctx.send(embed=embed)
+                if result and all(r is not None for r in result):
+                    xp, level, wallet = result
+                else:
+                    print(f"[ALERTA] Dados incompletos para o usuário {user_id}.")
+                    xp = level = wallet = 0
 
-    def cog_unload(self):
-        self.db.close()
+        except Exception as e:
+            print(f"[ERRO] ao acessar banco de dados: {e}")
+            await ctx.send("❌ Erro ao acessar os dados do usuário.")
+            return
+
+        # Monta o embed com as informações do usuário
+        embed = discord.Embed(
+            title=f"📋 Perfil de {user_name}",
+            color=discord.Color.blue()
+        )
+        embed.add_field(name="🔢 Nível", value=str(level), inline=True)
+        embed.add_field(name="⭐ XP", value=str(xp), inline=True)
+        embed.add_field(name="💰 Créditos", value=f"{wallet} créditos", inline=True)
+        embed.set_thumbnail(url=avatar_url)
+        embed.set_footer(text=f"Solicitado por {ctx.author}", icon_url=ctx.author.avatar.url)
+
+        await ctx.send(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(User(bot))
